@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/sayhello.dir/src/useHello.cpp.o  -o sayhello -Wl,-rpath,/home/ss/ss_ws/VSLAM/PA1/code/build liblibhello.so 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,liblibhello.so -o liblibhello.so CMakeFiles/libhello.dir/src/hello.cpp.o 

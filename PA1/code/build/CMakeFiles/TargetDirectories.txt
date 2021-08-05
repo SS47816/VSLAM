@@ -1,0 +1,8 @@
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/install/local.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/install/strip.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/sayhello.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/libhello.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/edit_cache.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/rebuild_cache.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/list_install_components.dir
+/home/ss/ss_ws/VSLAM/PA1/code/build/CMakeFiles/install.dir
