@@ -13,43 +13,43 @@ int main(int argc, char **argv)
   clock_t t_start = clock();
 
   // LU Decomposition
-  x_ = A.partialPivLu().solve(b_);
+  x_ = A.partialPivLu().solve(b_);  // A must be Invertible
   std::cout << "time of partialPivLu() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
   x_ = A.fullPivLu().solve(b_);
   std::cout << "time of fullPivLu() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
 
   // QR Decomposition
   x_ = A.householderQr().solve(b_);
   std::cout << "time of householderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
   x_ = A.colPivHouseholderQr().solve(b_);
   std::cout << "time of colPivHouseholderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
   x_ = A.fullPivHouseholderQr().solve(b_);
   std::cout << "time of fullPivHouseholderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
 
-  // Cholesky Decomposition (A must be Positive Definite Matrix)
-  x_ = A.llt().solve(b_);
+  // Cholesky Decomposition
+  x_ = A.llt().solve(b_); // A must be Positive Definite
   std::cout << "time of llt() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
-  x_ = A.ldlt().solve(b_);
+  x_ = A.ldlt().solve(b_);  // A must be Positive or Negative Semidefinite
   std::cout << "time of ldlt() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
-  std::cout << "x = " << x_.transpose() << std::endl;
+  // std::cout << "x = " << x_.transpose() << std::endl;
   t_start = clock();
 
   return EXIT_SUCCESS;
