@@ -16,41 +16,41 @@ int main(int argc, char **argv)
   x_ = A.partialPivLu().solve(b_);
   std::cout << "time of partialPivLu() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
   x_ = A.fullPivLu().solve(b_);
   std::cout << "time of fullPivLu() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
 
   // QR Decomposition
   x_ = A.householderQr().solve(b_);
   std::cout << "time of householderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
   x_ = A.colPivHouseholderQr().solve(b_);
   std::cout << "time of colPivHouseholderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
   x_ = A.fullPivHouseholderQr().solve(b_);
   std::cout << "time of fullPivHouseholderQr() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
 
   // Cholesky Decomposition (A must be Positive Definite Matrix)
   x_ = A.llt().solve(b_);
   std::cout << "time of llt() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
   x_ = A.ldlt().solve(b_);
   std::cout << "time of ldlt() is " << 1000 * (clock() - t_start) / (double) CLOCKS_PER_SEC << "ms" << std::endl;
   std::cout << "x = " << x_.transpose() << std::endl;
-  clock_t t_start = clock();
+  t_start = clock();
 
   return EXIT_SUCCESS;
 }
