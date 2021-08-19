@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     {
         double t, t_x, t_y, t_z, q_x, q_y, q_z, q_w;
         trajectory_file >> t >> t_x >> t_y >> t_z >> q_x >> q_y >> q_z >> q_w;
-        poses.emplace_back(Sophus::SE3d(Eigen::Quaterniond{q_w, q_x, q_y, q_z}, Eigen::Vector3d(t_y, t_x, t_z)));
+        poses.emplace_back(Sophus::SE3d(Eigen::Quaterniond{q_w, q_x, q_y, q_z}, Eigen::Vector3d(t_x, t_y, t_z)));
     }
     trajectory_file.close();
     // end your code here

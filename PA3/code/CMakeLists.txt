@@ -18,3 +18,6 @@ ${Pangolin_INCLUDE_DIRS}
 
 add_executable(draw_trajectory src/draw_trajectory.cpp)
 target_link_libraries(draw_trajectory ${EIGEN3_LIBS} Sophus::Sophus ${Pangolin_LIBRARIES})
+
+add_executable(comp_trajectories src/comp_trajectories.cpp)
+target_link_libraries(comp_trajectories ${EIGEN3_LIBS} Sophus::Sophus ${Pangolin_LIBRARIES})
