@@ -63,7 +63,7 @@ void DrawTrajectory(const std::vector<Sophus::SE3d, Eigen::aligned_allocator<Sop
     pangolin::FinishFrame();
     usleep(5000);   // sleep 5 ms
   }
-}
+};
 
 void readTrajectory(std::vector<Sophus::SE3d, Eigen::aligned_allocator<Sophus::SE3d>> &poses, const std::string filename)
 {
@@ -76,9 +76,21 @@ void readTrajectory(std::vector<Sophus::SE3d, Eigen::aligned_allocator<Sophus::S
   }
 
   trajectory_file.close();
-}
+};
 
-double computeRMSE();
+double computeRMSE(const std::vector<Sophus::SE3d, Eigen::aligned_allocator<Sophus::SE3d>> &gt_poses,
+                    const std::vector<Sophus::SE3d, Eigen::aligned_allocator<Sophus::SE3d>> &es_poses)
+{
+  double rmse = 0.0;
+  size_t num_poses = std::min(gt_poses.size(), es_poses.size());
+  for (size_t i = 0; i < num_poses; i++)
+  {
+    const double e_i = (gt_poses[i].inverse()*es_poses[i]).log().norm();
+    rmse += e_i * e_i;
+  }
+
+  return std::sqrt(rmse/num_poses);
+};
 
 int main(int argc, char **argv) {
   // path to trajectory file
@@ -90,7 +102,7 @@ int main(int argc, char **argv) {
   readTrajectory(gt_poses, gt_filename);
   readTrajectory(es_poses, es_filename);
 
-  // computeRMSE(gt_poses, es_poses);
+  std::cout << "RMSE = " << computeRMSE(gt_poses, es_poses) << std::endl;
   DrawTrajectory(gt_poses, es_poses);
   return 0;
 }
