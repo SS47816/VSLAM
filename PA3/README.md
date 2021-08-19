@@ -53,10 +53,11 @@ Verify that $\mathfrak g = (\R^3, \R, \times)$ forms a Lie Algebra
 
 ### Task 6: Trajectory Plotting
 
-1. 
-2. 
+see in `code/src/draw_trajectory.cpp`
 
+### Task 7: Compute RMSE
 
+see in `code/src/comp_trajectories.cpp`
 
 
 
